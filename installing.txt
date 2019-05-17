@@ -1,0 +1,5 @@
+# pip install python_http_client
+pip install requests
+
+pip freeze > requirements.txt
+ https://opensource.com/article/18/2/why-python-devs-should-use-pipenv

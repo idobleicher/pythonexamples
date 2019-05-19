@@ -16,14 +16,16 @@ file.close()
 
 
 file = open(text_filename, "r")
-print("1")
-T# he arguments determines the number of bytes that should be read.
+print("-------------------------------------")
+print("-1")
+#The arguments determines the number of bytes that should be read.
+
 print(file.read(16))
-print("2")
+print("-2")
 print(file.read(4))
-print("3")
+print("-3")
 print(file.read(4))
-print("4")
+print("-4")
 print(file.read())
 
 file.close()

@@ -1,0 +1,24 @@
+# When a file is opened in write mode, the file's existing content is deleted.
+
+filename="newfile2.txt"
+
+file = open(filename, "w")
+file.write("Some initial text")
+file.close()
+
+
+file = open(filename, "r")
+print("Reading  contents 1 ")
+print(file.read())
+print("Finished Reading  contents 1")
+file.close()
+
+file = open(filename, "w")
+file.write("Some new text")
+file.close()
+
+file = open(filename, "r")
+print("Reading new contents")
+print(file.read())
+print("Finished  new contents")
+file.close()

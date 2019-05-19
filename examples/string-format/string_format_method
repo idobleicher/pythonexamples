@@ -1,0 +1,22 @@
+name = "Eric"
+age = 74
+msg="Hello, {}. You are {}.".format(name, age)
+print(msg)
+
+msg2="Hello, {1}. You are {0}.".format(age , name)
+print(msg2)
+
+
+
+person = {'name': 'Eric', 'age': 74}
+msg3="Hello, {name}. You are {age}.".format(name=person['name'], age=person['age'])
+print(msg3)
+
+# You can also use ** to do this neat trick with dictionaries:
+msg4="Hello, {name}. You are {age}.".format(**person)
+print(msg4)
+
+# Code using str.format() is much more easily readable than code using %-formatting,
+#  but str.format() can still be quite verbose when you are dealing with multiple parameters and longer strings.
+
+

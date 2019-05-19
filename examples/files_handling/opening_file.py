@@ -26,3 +26,7 @@ open(text_filename)
 
 # binary write mode
 open(binary_filename, "wb")
+
+#Once a file has been opened and used, you should close it.
+#This is done with the close method of the file object.
+myfile.close()

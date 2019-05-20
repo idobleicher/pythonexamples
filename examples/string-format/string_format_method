@@ -6,7 +6,9 @@ print(msg)
 msg2="Hello, {1}. You are {0}.".format(age , name)
 print(msg2)
 
-
+a = "{x}, {y}".format(x=5, y=12)
+print(a)
+#5, 12
 
 person = {'name': 'Eric', 'age': 74}
 msg3="Hello, {name}. You are {age}.".format(name=person['name'], age=person['age'])

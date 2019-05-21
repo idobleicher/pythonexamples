@@ -1,4 +1,4 @@
-from examples.simple_game_exa.Goblin import *
+from examples.simple_game.Goblin import *
 
 goblin = Goblin("Gobbly")
 

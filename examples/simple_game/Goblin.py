@@ -1,5 +1,5 @@
 
-from examples.simple_game_exa.GameObject import *
+from examples.simple_game.GameObject import *
 
 
 class Goblin(GameObject):

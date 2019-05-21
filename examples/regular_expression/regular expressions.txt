@@ -1,0 +1,38 @@
+Regular expressions are a powerful tool for various kinds of string manipulation.
+
+They are a domain specific language (DSL) that is present as a library in
+most modern programming languages, not just Python.
+
+They are useful for two main tasks:
+- verifying that strings match a pattern (for instance, that a string has the format of an email address),
+- performing substitutions in a string (such as changing all American spellings to British ones).
+
+
+
+Domain specific languages are highly specialized mini programming languages.
+Regular expressions are a popular example, and SQL (for database manipulation) is another.
+Private domain-specific languages are often used for specific industrial purposes.
+
+Regular expressions in Python can be accessed using the re module,
+which is part of the standard library.
+
+After you've defined a regular expression, the re.match function
+ can be used to determine whether it matches at the beginning of a string.
+
+If it does, match returns an object representing the match, if not, it returns None.
+
+To avoid any confusion while working with regular expressions, we would use raw strings as r"expression".
+Raw strings don't escape anything, which makes use of regular expressions easier.
+
+
+Metacharacters are what make regular expressions more powerful than normal string methods.
+They allow you to create regular expressions to represent concepts like "one or more repetitions of a vowel".
+
+
+The existence of metacharacters poses a problem if you want to create a regular expression (or regex) that matches
+ a literal metacharacter, such as "$".
+ You can do this by escaping the metacharacters by putting a backslash in front of them.
+However, this can cause problems, since backslashes also have an escaping function in normal Python strings.
+ This can mean putting three or four backslashes in a row to do all the escaping.
+
+ #To avoid this, you can use a raw string

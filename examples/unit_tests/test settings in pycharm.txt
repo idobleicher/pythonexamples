@@ -1,0 +1,5 @@
+MakeFile
+fixture
+
+unittest
+in pycharm settings go to Python integrated tool and set default test runner to pytest

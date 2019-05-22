@@ -1,0 +1,46 @@
+Fixtures requiring network access depend on connectivity and are usually time-expensive to create.
+ Extending the previous example, we can add a scope="module" parameter to the @pytest.fixture invocation to
+  cause the decorated smtp_connection fixture function to only be invoked once PER TEST MODULE
+   (the default is to invoke once per test function).
+
+ Multiple test functions in a test module will thus each receive the same smtp_connection fixture instance,
+  thus saving time.
+
+ Possible values for scope are: function, class, module, package or session.
+
+
+
+function	Run once per test
+class	    Run once per class of tests
+module	   Run once per module
+session	   Run once per session
+
+
+The next example puts the fixture function into a separate conftest.py
+file so that tests from multiple test modules in the directory can access the fixture function:
+
+# content of conftest.py
+import pytest
+import smtplib
+
+@pytest.fixture(scope="module")
+def smtp_connection():
+    return smtplib.SMTP("smtp.gmail.com", 587, timeout=5)
+
+#The name of the fixture again is smtp_connection and you can access its result
+ by listing the name smtp_connection as an input parameter in any test or fixture
+ function (in or below the directory where conftest.py is located):
+ # content of test_module.py
+
+def test_ehlo(smtp_connection):
+    response, msg = smtp_connection.ehlo()
+    assert response == 250
+    assert b"smtp.gmail.com" in msg
+    assert 0  # for demo purposes
+
+def test_noop(smtp_connection):
+    response, msg = smtp_connection.noop()
+    assert response == 250
+    assert 0  # for demo purposes
+
+

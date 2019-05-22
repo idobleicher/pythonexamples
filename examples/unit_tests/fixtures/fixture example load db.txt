@@ -1,0 +1,32 @@
+ Example 1:
+
+ # define a fixture with a function wrapping it into the @pytest.fixture() decorator
+    @pytest.fixture()
+    def db_setup(request):
+
+    #some static data to work with, here _gen_tweets loaded in a tweets.json file
+        tweets = list(_gen_tweets())
+        import_tweets(tweets)
+        import_hashtags()
+
+#To define a teardown use the def fin(): ... + request.addfinalizer(fin) construct to do the required cleanup after each test. You can also use yield
+        def fin():
+            truncate_tables()
+
+        request.addfinalizer(fin)
+
+hen to use this fixture on the test methods we can just pass it in as function argument:
+
+def test_get_tips(db_setup):
+    ...
+
+
+def test_add_tips(db_setup):
+    ...
+
+
+def test_get_hashtags(db_setup):
+    ...
+
+
+def test_add_hashtags(db_setup):

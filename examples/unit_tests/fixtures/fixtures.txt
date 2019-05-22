@@ -1,0 +1,28 @@
+to read https://docs.pytest.org/en/latest/fixture.html
+
+If your tests need to work on data you typically need to set them up.
+This is often a process that has to be repeated and independent for each test.
+This often leads to duplicate code which is "number one in the stink parade" (Kent Beck and Martin Fowler).
+
+The @pytest.fixture decorator provides an easy yet powerful way to setup and teardown resources.
+ You can then pass these defined fixture objects into your test functions as input arguments.
+
+You want each test to be independent, something that you can
+enforce by running your tests in random order.
+
+Fixtures are also referred to as dependency injections
+
+
+It is  recommend adding docstrings to your fixtures so that they show up when somebody probes for them with the --fixtures flag:
+pytest --fixtures test_groceries.py
+...
+pytest's fixtures
+...
+...
+pytest_cov's fixtures
+...
+--------------------------------------- fixtures defined from test_groceries ----------------------------------------
+cart
+    Setup code to create a groceries cart object with 6 items in it
+
+

@@ -1,7 +1,16 @@
 import unittest
 from examples.unit_tests.test_suite_example.Widget import *
 
+
 class WidgetTestCase(unittest.TestCase):
+
+    # setUpClass and tearDownClass    are    run    once
+    # for the whole class; setUp and tearDown are run before and after each test method.
+
+    @classmethod
+    def setUpClass(cls):
+        print("setUpClass")
+
     def setUp(self):
         print("This is setup")
         self.widget = Widget('The widget')
@@ -20,3 +29,7 @@ class WidgetTestCase(unittest.TestCase):
     def tearDown(self):
         print("This is tear down")
         self.widget.dispose()
+
+    @classmethod
+    def tearDownClass(cls):
+        print("tearDownClass")

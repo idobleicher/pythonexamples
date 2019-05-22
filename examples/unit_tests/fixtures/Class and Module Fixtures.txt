@@ -1,0 +1,11 @@
+Class and module level fixtures are implemented in TestSuite. When the test suite encounters a test from a new class then tearDownClass() from the previous class (if there is one) is called, followed by setUpClass() from the new class.
+
+Similarly if a test is from a different module from the previous test then tearDownModule from the previous module is run, followed by setUpModule from the new module.
+
+After all the tests have run the final tearDownClass and tearDownModule are run.
+
+The default ordering of tests created by the unittest test loaders is to group all tests from the same modules and classes together.
+This will lead to setUpClass / setUpModule (etc) being called exactly once per class and module.
+
+ If you randomize the order, so that tests from different modules and classes are adjacent to each other,
+ then these shared fixture functions may be called multiple times in a single test run.

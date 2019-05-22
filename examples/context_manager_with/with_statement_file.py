@@ -1,3 +1,5 @@
+#https://www.geeksforgeeks.org/with-statement-in-python/
+
 # with statement in Python is used in exception handling to make the code cleaner and much more readable.
 # It simplifies the management of common resources like file streams.
 

@@ -69,6 +69,7 @@ if re.match(pattern, "ice--ice"):
 # If the first number is missing, it is taken to be zero.
 #  If the second number is missing, it is taken to be infinity.
 
+# "9{1,3}$" matches string that have 1 to 3 nines.
 pattern = r"9{1,3}$"
 
 if re.match(pattern, "9"):

@@ -1,0 +1,2 @@
+ source deactivate argosv2
+ conda env list

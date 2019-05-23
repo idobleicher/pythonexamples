@@ -1,0 +1,38 @@
+http://www.celeryproject.org/
+https://www.cloudamqp.com/docs/celery.html
+
+Celery: Distributed Task Queue
+
+Celery is an asynchronous task queue/job queue based on distributed message passing.
+
+It is focused on real-time operation, but supports scheduling as well.
+
+The execution units, called tasks, are executed concurrently on a single or more worker servers using multiprocessing,
+ Eventlet,	or gevent.
+  Tasks can execute asynchronously (in the background)  or synchronously (wait until ready).
+
+
+
+Running rabbit: sudo apt-get install rabbitmq-server
+on docker:$ docker run -d -p 5462:5462 rabbitmq
+
+Celery is on the Python Package Index (PyPI), so it can be installed with standard Python tools like pip or easy_install:
+$ pip install celery
+
+
+Running the Celery worker server
+You can now run the worker by executing our program with the worker argument:
+
+tasks - the python code
+$ celery -A tasks worker --loglevel=info
+
+celery worker --help
+
+celery help
+
+run:
+/projects/personal/pythonexamples/examples/celery/example1$ celery -A tasks worker --loglevel=info
+#In production you’ll want to run the worker in the background as a daemon. To do this you need to use the tools provided by your platform,
+
+/projects/personal/pythonexamples/examples/celery/celery_app$ celery -A celery_app worker -l info
+

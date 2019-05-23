@@ -1,0 +1,3 @@
+sudo rabbitmq-plugins enable rabbitmq_management
+http://localhost:15672/
+default guest/guest

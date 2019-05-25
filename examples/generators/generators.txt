@@ -1,7 +1,6 @@
 https://jeffknupp.com/blog/2013/04/07/improve-your-python-yield-and-generators-explained/
 
-A Python generator is a function which returns a generator i
-terator (just an object we can iterate over) by calling yield.
+A Python generator is a function which returns a generator iterator (just an object we can iterate over) by calling yield.
 
 yield may be called with a value, in which case that value is treated as the "generated" value.
 
@@ -9,11 +8,13 @@ The next time next() is called on the generator iterator (i.e. in the next step 
 Rthe generator resumes execution from where it called yield,
 not from the beginning of the function.
 
- All of the state, like the values of local variables, is recovered and the generator contiues to
+ All of the state, like the values of local variables, is recovered and the generator continues to
   execute until the next call to yield.
 
+In recent years, generators have grown more powerful as features have been added through PEPs.
 
   ---Coroutines and Subroutines
+
   When we call a normal Python function, execution starts at function's first line and continues until a return statement,
    exception, or the end of the function (which is seen as an implicit return None) is encountered.
 

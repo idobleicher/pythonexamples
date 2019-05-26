@@ -27,4 +27,16 @@ In recent years, generators have grown more powerful as features have been added
    To do so, such a function would need to be able to "save its work," so to speak.
 
 
+   - generators are used to generate a series of values
+
+    - yield is like the return of generator functions
+        The only other thing yield does is save the "state" of a generator function
+
+      - A generator is just a special type of iterator
+
+        -Like iterators, we can get the next value from a generator using next()
+        for gets values by calling next() implicitly
+
+
+
 

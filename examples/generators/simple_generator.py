@@ -29,6 +29,7 @@ print(next(our_generator))
 print(next(our_generator))
 #  3
 
+#Once a generator has been exhausted, calling next() on it will result in an error, so you can only consume all the values of a generator once
 
 print ("-----------")
 for value in our_generator:
@@ -38,3 +39,9 @@ for value in our_generator:
 
 #next(our_generator)
 #will cause StopIteration
+
+#!!Create a new generator!!! by calling the generator function again.
+our_generator = simple_generator_function()
+for value in our_generator:
+    print("again2" , value)
+

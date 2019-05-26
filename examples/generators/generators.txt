@@ -27,6 +27,13 @@ In recent years, generators have grown more powerful as features have been added
    To do so, such a function would need to be able to "save its work," so to speak.
 
 
+
+Note: Outside of Python, all but the simplest generators would be referred to as coroutines.
+The important thing to remember is, in Python, everything described here as a coroutine is still a generator.
+ Python formally defines the term generator; coroutine is used in discussion but has no formal definition in the language.
+
+
+
    - generators are used to generate a series of values
 
     - yield is like the return of generator functions

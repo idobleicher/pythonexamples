@@ -1,2 +1,14 @@
 https://docs.python.org/3/library/enum.html
 https://www.geeksforgeeks.org/enum-in-python/
+
+    # Enum member values
+# Member values can be anything: int, str, etc..
+# If the exact value is unimportant you may use auto instances and an appropriate value will be chosen for you.
+# Care must be taken if you mix auto with other values.
+
+#ote Nomenclature
+# The class Color is an enumeration (or enum)
+# The attributes Color.RED, Color.GREEN, etc., are enumeration members (or enum members) and are functionally constants.
+# The enum members have names and values (the name of Color.RED is RED, the value of Color.BLUE is 3, etc.)
+
+# Even though we use the class syntax to create Enums, Enums are not normal Python classes. See How are Enums different? for more details.

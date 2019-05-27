@@ -1,0 +1,34 @@
+pip install Flask
+
+The Web Server Gateway Interface (WSGI) is a simple calling convention for web servers to forward requests to web applications
+or frameworks written in the Python programming languagw
+
+$ export FLASK_APP=hello.py
+$ flask run
+ * Running on http://127.0.0.1:5000/
+
+ C:\path\to\app>set FLASK_APP=hello.py
+
+ Alternatively you can use python -m flask:
+
+$ export FLASK_APP=hello.py
+$ python -m flask run
+ * Running on http://127.0.0.1:5000/
+
+ If you have the debugger disabled or trust the users on your network, you can make the server publicly available simply by adding --host=0.0.0.0 to the command line:
+
+flask run --host=0.0.0.0
+This tells your operating system to listen on all public IPs.
+
+ If you enable debug support the server will reload itself on code changes, and it will also provide you with a helpful debugger if things go wrong.
+
+To enable all development features (including debug mode) you can export the FLASK_ENV environment variable and set it to development before running the server:
+
+$ export FLASK_ENV=development (set on windows)
+$ flask run
+
+This does the following things:
+it activates the debugger
+it activates the automatic reloader
+it enables the debug mode on the Flask application.
+You can also control debug mode separately from the environment by exporting FLASK_DEBUG=1.

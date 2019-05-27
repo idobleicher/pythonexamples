@@ -1,4 +1,5 @@
-#It is also possible to mark individual test instances within parametrize, for example with the builtin mark.xfail:
+#It is also possible to mark individual test instances within parametrize, for example with
+# the builtin mark.xfail:
 import pytest
 
 @pytest.mark.parametrize(

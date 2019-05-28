@@ -1,5 +1,5 @@
 from __future__ import absolute_import, unicode_literals
-from celery import Celery
+from celery_examples import Celery
 
 tasks_queue = "my_tasks_queue"
 

@@ -1,0 +1,45 @@
+The super function can be used to gain access to inherited methods –
+from a parent or sibling class –
+that has been overwritten in a class object.
+
+Or, as the official Python documentation says:
+
+
+“[Super is used to] return a proxy object that delegates method calls to a parent or sibling class of type.
+ This is useful for accessing inherited methods that have been overridden in a class. T
+#he search order is same as that used by getattr() except that the type itself is skipped.”
+
+
+The super function is somewhat versatile, and can be used in a couple of ways.
+
+Use Case 1: Super can be called upon in a single inheritance,
+in order to refer to the parent class or
+ multiple classes without explicitly naming them.
+ It’s somewhat of a shortcut, but more importantly,
+ it helps keep your code maintainable for the foreseeable future.
+
+Use Case 2: Super can be called upon in a dynamic execution environment for multiple
+or collaborative inheritance.
+This use is considered exclusive to Python, because it’s not possible with languages
+that only support single inheritance or are statically compiled.
+
+When the super function was introduced it sparked a bit of controversy.
+Many developers found the documentation unclear,
+and the function itself to be tricky to implement
+. It even garnered a reputation for being harmful.
+ But it’s important to remember that Python has evolved considerably
+ since 2.2 and many of these concerns no longer apply.
+
+The great thing about super is that it can be used to enhance any module method.
+Plus, there’s no need to know the details about the base class that’s being
+used as an extender. The super function handles all of it for you.
+
+So, for all intents and purposes, super is a shortcut to access a base class without having to know its type or name.
+
+In Python 3 and above, the syntax for super is:
+
+super().methoName(args)
+
+Whereas the normal way to call super (in older builds of Python) is:
+
+super(subClass, instance).method(args

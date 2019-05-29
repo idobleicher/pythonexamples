@@ -1,0 +1,13 @@
+https://pymotw.com/2/threading/
+
+Daemon vs. Non-Daemon Threads
+Up to this point, the example programs have implicitly waited to exit until all threads have completed their work.
+
+ Sometimes programs spawn a thread as a daemon that runs without blocking the main program from exiting.
+
+  Using daemon threads is useful for services where there may not be an easy way to interrupt the thread or where letting the
+  thread die in the middle of its work does not lose or corrupt data
+  (for example, a thread that generates “heart beats” for a service monitoring tool).
+
+  To mark a thread as a daemon, call its setDaemon() method with a boolean argument.
+   The default is for threads to not be daemons, so passing True turns the daemon mode on.

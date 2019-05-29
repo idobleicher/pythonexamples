@@ -19,12 +19,16 @@ some_func(func_arg)
 
 print ("---------------------")
 
-some_func(func_arg , args)
+some_func(func_arg ,*args)
 # func_args: x
 # arg in  *argv: ('a', 'b')
 
 print ("---------------------")
 
-some_func(func_arg  , kwargs)
+some_func(func_arg  , *args , **kwargs)
 # func_args: x
-# arg in  *argv: {'karg1': 3, 'karg2': 'two', 'karg3': 5
+# arg in  *argv: a
+# arg in  *argv: b
+# keyarg karg1 =  3
+# keyarg karg2 =  two
+# keyarg karg3 =  5

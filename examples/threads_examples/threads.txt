@@ -11,3 +11,21 @@ Up to this point, the example programs have implicitly waited to exit until all 
 
   To mark a thread as a daemon, call its setDaemon() method with a boolean argument.
    The default is for threads to not be daemons, so passing True turns the daemon mode on.
+
+
+   n CPython, the global interpreter lock, or GIL, is a mutex that protects access to Python objects, preventing multiple threads
+    from executing Python bytecodes at once.
+
+   This lock is necessary mainly because CPython's memory management is not thread-safe
+    (However, since the GIL exists, other features have grown to depend on the guarantees that it enforces.)
+
+    See also
+threading
+Standard library documentation for this module.
+thread
+Lower level thread API.
+Queue
+Thread-safe Queue, useful for passing messages between threads.
+multiprocessing
+An API for working with processes that mirrors the threading API.
+

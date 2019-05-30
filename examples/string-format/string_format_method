@@ -21,4 +21,16 @@ print(msg4)
 # Code using str.format() is much more easily readable than code using %-formatting,
 #  but str.format() can still be quite verbose when you are dealing with multiple parameters and longer strings.
 
+s = '{0} BLAH {1} BLAH BLAH {2} BLAH BLAH BLAH'
+x = ['1', '2', '3']
+print( s.format(*x))
+#1 BLAH 2 BLAH BLAH 3 BLAH BLAH BLAH
 
+
+
+#String format - on list
+param1_list = ['a', 'b', 'c']
+some_pattern_1 = 'param 1: {param1}'
+result_str_list = [some_pattern_1.format(param1=param1) for param1 in param1_list]
+print(result_str_list)
+#['param 1: a', 'param 1: b', 'param 1: c']

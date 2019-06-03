@@ -32,6 +32,6 @@ print(3 not in nums)
 
 
 letters = ['a', 'b', 'z']
-if "z"in letters:
+if "z" in letters:
     print("Yes")
 

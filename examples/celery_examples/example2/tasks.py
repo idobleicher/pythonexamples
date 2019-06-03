@@ -42,4 +42,4 @@ async_result = add.delay(2, 2)
 #This method is actually a star-argument shortcut to another method called apply_async():
 #This is a handy shortcut to the apply_async() method that gives greater control of the task execution (see Calling Tasks):
 
-async_result.ready
+print(async_result.ready)

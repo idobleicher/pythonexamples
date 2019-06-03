@@ -4,7 +4,7 @@ import logging
 import time
 
 
-logging.basicConfig(filename='celery_app.log',level=logging.DEBUG)
+logging.basicConfig(filename='celery_app_todo.log',level=logging.DEBUG)
 logging.warning('Watch out!')
 
 @app.task(bind=True)

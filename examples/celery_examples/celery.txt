@@ -1,5 +1,9 @@
 http://www.celeryproject.org/
 https://www.cloudamqp.com/docs/celery.html
+https://docs.celeryproject.org/en/latest/userguide/application.html
+https://docs.celeryproject.org/en/latest/getting-started/first-steps-with-celery.html
+https://docs.celeryproject.org/en/latest/getting-started/next-steps.html
+
 
 Celery: Distributed Task Queue
 
@@ -34,5 +38,7 @@ run:
 /projects/personal/pythonexamples/examples/celery/example1$ celery -A tasks worker --loglevel=info
 #In production you’ll want to run the worker in the background as a daemon. To do this you need to use the tools provided by your platform,
 
-/projects/personal/pythonexamples/examples/celery/celery_app$ celery -A celery_app worker -l info
+
+~/projects/personal/pythonexamples/examples$ celery -A celery_examples.celery_example_1.celeryapp1 worker --loglevel=debug
+
 

@@ -1,12 +1,12 @@
 from __future__ import absolute_import, unicode_literals
-from celery_examples import Celery
+from celery import Celery
 
 tasks_queue = "my_tasks_queue"
 
-app = Celery('celery_app',
+app = Celery('celery_app_todo',
              broker='amqp://',
              backend='amqp://',
-             include=['celery_app.tasks'])
+             include=['celery_app_todo.tasks'])
 # STARTED state is not enabled by default so we flip it on
 app.conf.update(task_track_started=True)
 

@@ -60,6 +60,4 @@ with MessageWriter('my_file.txt') as xfile:
 
 
 
-filter_none
-brightness_4
 file = open('hello.txt')

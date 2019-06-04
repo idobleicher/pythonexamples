@@ -23,6 +23,7 @@ def show_details(name, f):
 
 
 def simple_decorator(f):
+    print ("in simple decorator")
     @functools.wraps(f)
     def decorated(a='decorated defaults', b=1):
         print('  decorated:', (a, b))

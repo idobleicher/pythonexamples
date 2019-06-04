@@ -1,20 +1,7 @@
-from celery_examples.celery_example_1.celeryapp1 import myapp , add_queue_name
-from celery_examples.celery_example_1.tasks import mul, add , xsum
+from celery_examples.celery_example_1.celeryapp1 import myapp,add_queue_name
+from celery_examples.celery_example_1.tasks import add , mul, xsum
 from celery_examples.celery_example_1.celeryapp1 import add1
-from celery_examples.celery_example_1.DumpCam import DumpCam
-from celery.events import EventReceiver
 
-
-
-# def main(app, freq=2.0):
-#     state = app.events.State()
-#     with myapp.connection() as connection:
-#         recv = app.events.Receiver(connection, handlers={'*': state.event})
-#         with DumpCam(state, freq=freq):
-#             recv.capture(limit=None, timeout=None)
-#
-# if __name__ == '__main__':
-#     main(myapp)
 
 
 s = myapp.connection()
@@ -32,17 +19,16 @@ def run_task_async(task_function , args, timeout = None ) :
 
 
 #add1 is in celeryapp1
-###run_task_async(add1 ,(10 ,20), timeout=12)
+run_task_async(add1 ,(10 ,20), timeout=12)
 
 #function from tasks:
 
-###run_task_async(add1 ,(10 ,20), timeout=12)
+run_task_async(add ,(10 ,20), timeout=12)
 
-###run_task_async(mul ,(2 ,5), timeout=12)
+run_task_async(mul ,(2 ,5), timeout=12)
 
 numbers = [[1 ,2 ,3]]
-xsum.apply_async(numbers)
-###run_task_async(xsum ,(numbers), timeout=12)
+run_task_async(xsum ,(numbers), timeout=12)
 
 
 

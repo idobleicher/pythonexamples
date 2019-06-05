@@ -1,12 +1,14 @@
 from datetime import date
-from datetime import datetime
+from datetime import datetime ,timezone
 
 def main():
     ##DATETIME OBJECTS
     #Get today's date from datetime class
     today=datetime.now()
-
     print (today)
+
+    utc_now = datetime.now(tz=timezone.utc)
+    print(utc_now)
 
     # Get the current time
     t = datetime.time(datetime.now())

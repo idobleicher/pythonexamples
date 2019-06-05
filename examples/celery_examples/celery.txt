@@ -3,6 +3,7 @@ https://www.cloudamqp.com/docs/celery.html
 https://docs.celeryproject.org/en/latest/userguide/application.html
 https://docs.celeryproject.org/en/latest/getting-started/first-steps-with-celery.html
 https://docs.celeryproject.org/en/latest/getting-started/next-steps.html
+https://docs.celeryproject.org/en/latest/reference/celery.app.task.html (see apply_async)
 
 
 Celery: Distributed Task Queue

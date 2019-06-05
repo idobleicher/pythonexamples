@@ -2,9 +2,12 @@
 from celery_examples.celery_example_2.celeryapp2 import myapp2
 import time
 
-@myapp2.task
+
+add_task_name = "add_task"
+
+@myapp2.task ( name = add_task_name)
 def add(x, y):
-    time.sleep(5)
+    time.sleep(2)
     return x + y
 
 

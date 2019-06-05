@@ -34,3 +34,9 @@ print(async_result.get( timeout = 30))
 
 async_result = myapp2.send_task(add_task_name, [5, 7])
 print(async_result.get( timeout = 10))
+
+
+#the following task will remain in queue
+add.apply_async((params))
+add.apply_async((params))
+add.apply_async((params))

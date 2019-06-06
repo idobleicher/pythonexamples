@@ -1,0 +1,29 @@
+Time Limits
+New in version 2.0.
+
+pool support:	prefork/gevent
+Soft, or hard?
+
+
+
+A single task can potentially run forever, if you have lots of tasks waiting for some event that’ll never happen you’ll block
+ the worker from processing new tasks indefinitely. The best way to defend against this scenario happening is enabling time limits.
+
+The time limit (–time-limit) is the maximum number of seconds a task may run before the
+ process executing it is terminated and replaced by a new process. You can also enable a soft
+ time limit (–soft-time-limit), this raises an exception the task can catch to clean up before the hard time limit kills it:
+
+
+The time limit is set in two values, soft and hard. The soft time limit allows the task to catch an exception to clean
+ up before it is killed: the hard timeout isn’t catch-able and force terminates the task.
+
+
+from myapp import app
+from celery.exceptions import SoftTimeLimitExceeded
+
+@app.task
+def mytask():
+    try:
+        do_work()
+    except SoftTimeLimitExceeded:
+        clean_up_in_a_hurry()

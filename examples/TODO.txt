@@ -1,4 +1,4 @@
 Django
-
-
-test
+loops = [asyncio.new_event_loop() for i in range(len(issues_configuration.keys()))]
+       with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
+           results = executor.map(issue_executor, issues_configuration.keys(), loops)

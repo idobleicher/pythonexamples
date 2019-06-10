@@ -18,3 +18,15 @@ print(result)
 result = list(map(lambda x: x+5, nums))
 print(result)
 #[16, 27, 38, 49, 60]
+
+
+def multiply2(x):
+  return x * 2
+
+
+print(list(map(multiply2, [1, 2, 3, 4])))
+# Output [2, 4, 6, 8]
+
+
+print(list(map(lambda x : x*2, [1, 2, 3, 4])))
+#Output [2, 4, 6, 8]

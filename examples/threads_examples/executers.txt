@@ -1,0 +1,14 @@
+The concurrent.futures module is part of the standard library which provides a high level API for launching async tasks. We will discuss and go through code samples for the common usages of this module.
+
+Executors
+This module features the Executor class which is an abstract class and it can not be used directly.
+ However it has two very useful concrete subclasses –
+  ThreadPoolExecutor and
+  ProcessPoolExecutor.
+
+  As their names suggest, one uses multi threading and the other one uses multi-processing.
+  In both case, we get a pool of threads or processes and we can submit tasks to this pool.
+The pool would assign tasks to the available resources (threads or processes) and schedule them to run.
+
+we would want to use the ProcessPoolExecutor for CPU intensive tasks.
+ The ThreadPoolExecutor is better suited for network operations or I/O.

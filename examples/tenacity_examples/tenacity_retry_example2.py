@@ -1,4 +1,4 @@
-from tenacity import retry,wait_fixed,wait_random,wait_exponential,wait_random_exponential, wait_chain
+from tenacity import retry,wait_fixed,wait_random,wait_exponential,wait_random_exponential, wait_chain,stop_after_attempt,retry_if_exception_type
 import datetime
 
 #backoff
@@ -40,7 +40,7 @@ def wait_exponential_jitter():
     print("Randomly wait up to 2^x * 1 seconds between each retry until the range reaches 60 seconds, then randomly up to 60 seconds afterwards")
     raise Exception
 
-wait_exponential_jitter()
+#wait_exponential_jitter()
 
 #Sometimes it’s necessary to build a chain of backoffs.
 
@@ -50,4 +50,18 @@ wait_exponential_jitter()
 def wait_fixed_chained():
     print("Wait 3s for 3 attempts, 7s for the next 2 attempts and 9s for all attempts thereafter")
     raise Exception
-wait_fixed_chained()
+#wait_fixed_chained()
+
+
+@retry(
+    wait=wait_exponential(1),
+    reraise=True,
+    stop=stop_after_attempt(3),
+    retry=retry_if_exception_type((IOError, ArithmeticError))
+)
+def wait_with_exception():
+    print(datetime.datetime.now())
+    raise  IOError
+
+wait_with_exception()
+

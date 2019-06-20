@@ -9,5 +9,3 @@ assert (temp >= 0), "Colder than absolute zero!"
 
 # AssertionError exceptions can be caught and handled like any other exception using the try-except statement,
 #  but if not handled, this type of exception will terminate the program.
-
-

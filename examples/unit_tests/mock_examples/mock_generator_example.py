@@ -1,5 +1,6 @@
 from unittest import mock
 
+
 class Foo(object):
     def iter(self):
         for i in [1, 2, 3]:

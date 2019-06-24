@@ -3,7 +3,7 @@
 import pytest
 
 @pytest.mark.parametrize(
-    "test_input,expected",
+    "test_input,expectedq",
     [("3+5", 8), ("2+4", 6), pytest.param("6*9", 42, marks=pytest.mark.xfail)],
 )
 def test_eval2(test_input, expected):

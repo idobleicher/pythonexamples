@@ -18,7 +18,7 @@ func_resolver= {
 
 def call_resolved_func(func_num):
     func = func_resolver.get(func_num)
-    func(a=1,b=2,c=3,d=4,e=5)
+    func(e=5,c=3,a=1,d=4,b=2)
 
 call_resolved_func(1)
 print("----------")

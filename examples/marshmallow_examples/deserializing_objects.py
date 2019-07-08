@@ -31,9 +31,9 @@ class UserSchema2(Schema):
     email = fields.Email()
     created_at = fields.DateTime()
 
-    @post_load
-    def make_user(self, data):
-        return User(**data)
+    # @post_load
+    # def make_user(self, data):
+    #     return User(**data)
 
 print("-----------------------------")
 #Now, the load method will return a User object.
@@ -44,4 +44,6 @@ user_data = {
 schema = UserSchema2()
 result = schema.load(user_data)
 print(result.data ) # => <User(name='Ronnie')>
-#<User(name='Ronnie')>
+user = UserSchema2(result.data)
+print(user.name)
+user

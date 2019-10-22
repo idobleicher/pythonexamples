@@ -1,0 +1,21 @@
+Generate requirements:
+1. Method 1 -  pip freeze > requirements.txt
+2. Method 2 - Use pipreqs - pipreqs used to generate requirements.txt file for any project based on imports
+
+
+Why not pip freeze ?
+
+pip freeze saves all packages in the environment including those that you don’t use in your current project. (if you don’t have virtualenv)
+pip freeze only saves the packages that are installed with pip install in your environment.
+sometimes you just need to create requirements.txt for a new project without installing modules.
+
+pip install pipreqs
+pipreqs /path/to/project
+
+3. Method 3
+pip-compile --output-file requirements.txt setup.py
+
+https://pypi.org/project/pip-tools/
+https://packaging.python.org/discussions/install-requires-vs-requirements/
+https://python-packaging.readthedocs.io/en/latest/dependencies.html
+https://packaging.python.org/guides/distributing-packages-using-setuptools/#setup-cfg

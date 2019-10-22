@@ -1,3 +1,5 @@
+conda create --name pythonexamples python=3.7
+conda env list -v
 pip install pip-tools
 pip-compile --output-file requirements.txt setup.py
 pip install -r requirements.txt

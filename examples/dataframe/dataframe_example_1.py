@@ -19,3 +19,14 @@ print(df)
 values = df['Name']
 print(values[0])
 #Sam
+
+
+def print_row(row):
+    print('Weight:', row.loc['Weight'])
+    print('Name:', row.loc['Name'])
+    print('Age:', row.loc['Age'])
+
+
+for index, row in df.iterrows():
+    print('-----------',index,'-----------')
+    print_row(row)

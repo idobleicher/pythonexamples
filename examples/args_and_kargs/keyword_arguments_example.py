@@ -13,6 +13,7 @@ def my_func(x, y=7, *args, **kwargs):
    print("args:" + str(args))
 
    print("x:" + str(x))
+   print("y:" + str(y))
   # print(kwargs.get("a"))
 
 
@@ -22,5 +23,5 @@ my_func(2, 3, 4, 5, 6, a=7, b=8)
 # kwargs:{'a': 7, 'b': 8}
 # args:(4, 5, 6)
 # x:2
-
+#y:3
 
